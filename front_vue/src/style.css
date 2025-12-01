@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式变量 */
+:root {
+  --primary-color: #165DFF;
+  --secondary-color: #69b1ff;
+  --neutral-color: #f5f7fa;
+  --text-dark: #1d2129;
+  --text-medium: #4e5969;
+  --text-light: #86909c;
+}
+
+/* 全局基础样式 */
+@layer base {
+  body {
+    @apply bg-gray-900 text-gray-300 font-sans;
+  }
+  
+  a {
+    @apply text-blue-400 hover:text-blue-300 transition-colors;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer;
+  }
+}
+
+/* 自定义组件样式 */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-all;
+  }
+  
+  .btn-secondary {
+    @apply bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600 transition-all;
+  }
+  
+  .tag {
+    @apply px-3 py-1 rounded-full text-sm bg-blue-500/20 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* 响应式布局 */
+#app {
+  @apply min-h-screen flex flex-col bg-gray-900;
+}
+
+/* 代码块样式增强 */
+pre {
+  @apply p-4 rounded-md overflow-x-auto;
+}
+
+code {
+  @apply font-mono text-sm;
+}
